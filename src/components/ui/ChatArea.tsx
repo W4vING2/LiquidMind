@@ -10,7 +10,7 @@ const ChatArea: React.FC = () => {
 					AI
 				</div>
 				<div>
-					<div className='font-bold'>Liquid-Core v1</div>
+					<div className='font-bold'>LiquidMind v1</div>
 					<div className='text-xs text-white/55'>Предпросмотр</div>
 				</div>
 				<button className='fixed w-[50px] h-[50px] top-5 right-5 z-90 p-3 bg-white/10 rounded-lg'>

@@ -1,16 +1,23 @@
 'use client'
 
+import { useMessageStore } from '@/src/store/messagesStore'
 import React, { useState } from 'react'
 
 const models = [
-	'Liquid-Core v1',
-	'Liquid-Creative v2',
-	'Liquid-Ultra v3',
-	'DeepSek Hybrid-X',
+	'openai/gpt-5-mini',
+	'deepseek/deepseek-chat-v3.1',
+	'anthropic/claude-sonnet-4',
+	'google/gemini-2.5-flash',
 ]
 
 const Sidebar: React.FC = () => {
 	const [active, setActive] = useState(0)
+	const { setModel } = useMessageStore()
+
+	const setCurrentModel = (idx: number, modelC: string) => {
+		setActive(idx)
+		setModel(modelC)
+	}
 
 	return (
 		<>
@@ -19,10 +26,10 @@ const Sidebar: React.FC = () => {
 			>
 				<div className='flex items-center gap-3 mb-6'>
 					<div className='w-12 h-12 rounded-lg bg-gradient-to-br from-purple-400 to-teal-400 flex items-center justify-center font-bold text-[#041118]'>
-						LG
+						LM
 					</div>
 					<div>
-						<div className='font-bold'>LiquidGlass UI</div>
+						<div className='font-bold'>LiquidMind</div>
 						<div className='text-xs text-white/55'>Выбор модели</div>
 					</div>
 				</div>
@@ -30,7 +37,7 @@ const Sidebar: React.FC = () => {
 					{models.map((model, idx) => (
 						<div
 							key={idx}
-							onClick={() => setActive(idx)}
+							onClick={() => setCurrentModel(idx, model)}
 							className={`p-2 rounded-xl cursor-pointer border border-white/8 ${
 								active === idx
 									? 'bg-gradient-to-br from-purple-400 to-blue-400 text-[#041118] border-none'
