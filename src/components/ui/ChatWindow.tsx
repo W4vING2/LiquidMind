@@ -1,9 +1,8 @@
 'use client'
 
 import { useMessageStore } from '@/src/store/messagesStore'
-import React from 'react'
 
-const ChatWindow: React.FC = () => {
+export default function ChatWindow() {
 	const { messages } = useMessageStore()
 	return (
 		<div className='flex-1 bg-white/4 border border-white/8 rounded-xl p-4 flex flex-col gap-4 overflow-y-auto'>
@@ -27,5 +26,3 @@ const ChatWindow: React.FC = () => {
 		</div>
 	)
 }
-
-export default ChatWindow

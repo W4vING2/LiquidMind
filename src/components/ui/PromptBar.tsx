@@ -1,20 +1,16 @@
 'use client'
 
 import { useMessageStore } from '@/src/store/messagesStore'
-import { fetchDataGpt } from '@/src/utils/getResponse'
-import React from 'react'
+import { Data } from '@/src/types/promptBar.types'
+import { fetchData } from '@/src/utils/fetchData'
 import { useForm } from 'react-hook-form'
 
-interface Data {
-	prompt: string
-}
-
-const PromptBar: React.FC = () => {
+export default function PromptBar() {
 	const { register, handleSubmit, reset } = useForm<Data>()
 	const { addMessage, model } = useMessageStore()
 
 	const onSubmit = async (data: Data) => {
-		const response = await fetchDataGpt(data.prompt, model)
+		const response = await fetchData(data.prompt, model)
 		reset()
 		addMessage({
 			text: data.prompt,
@@ -42,5 +38,3 @@ const PromptBar: React.FC = () => {
 		</form>
 	)
 }
-
-export default PromptBar

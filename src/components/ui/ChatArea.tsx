@@ -1,8 +1,7 @@
 import ChatWindow from '@/src/components/ui/ChatWindow'
 import PromptBar from '@/src/components/ui/PromptBar'
-import React from 'react'
 
-const ChatArea: React.FC = () => {
+export default function ChatArea() {
 	return (
 		<main className='glass bg-white/6 backdrop-blur-lg border border-white/12 rounded-2xl flex flex-col h-[90vh] p-5 md:w-[75vw] w-[85vw] ml-[14%] mt-[13%] md:m-auto'>
 			<div className='flex items-center gap-3 mb-4'>
@@ -22,5 +21,3 @@ const ChatArea: React.FC = () => {
 		</main>
 	)
 }
-
-export default ChatArea
