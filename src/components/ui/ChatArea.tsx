@@ -7,7 +7,7 @@ import { useMessageStore } from '@/src/store/messagesStore'
 export default function ChatArea() {
 	const { toggleBurger } = useMessageStore()
 	return (
-		<main className='glass bg-white/6 border border-white/12 rounded-2xl flex flex-col h-[100vh] p-5 md:w-[75vw] w-[100vw] md:m-auto'>
+		<main className='glass bg-white/6 border border-white/12 rounded-xs md:rounded-2xl md:p-5 flex flex-col h-[100vh] p-3 md:w-[75vw] w-[100vw] md:m-auto'>
 			<div className='flex items-center gap-3 mb-4'>
 				<div className='w-14 h-14 rounded-lg bg-gradient-to-br from-blue-400 to-teal-400 flex items-center justify-center font-bold text-[#041118]'>
 					AI

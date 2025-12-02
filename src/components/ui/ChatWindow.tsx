@@ -9,7 +9,7 @@ export default function ChatWindow() {
 			{messages.map(({ text, sender }, index) => {
 				return (
 					<div
-						className='bg-white/5 border border-white/10 p-3 rounded-xl max-w-[70%]'
+						className='bg-white/5 border border-white/10 p-3 rounded-xl max-w-[90%] overflow-wrap break-word text-white'
 						key={index}
 						style={{
 							alignSelf: sender === 'user' ? 'flex-end' : 'flex-start',
