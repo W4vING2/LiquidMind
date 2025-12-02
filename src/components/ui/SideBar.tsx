@@ -7,11 +7,14 @@ import { useState } from 'react'
 
 export default function Sidebar() {
 	const [active, setActive] = useState(0)
-	const { setModel } = useMessageStore()
+	const { setModel, isBurgerOpen } = useMessageStore()
 
 	return (
 		<aside
-			className={`hidden glass bg-white/6 backdrop-blur-lg border border-white/12 rounded-2xl p-5 md:block fixed md:static top-0 left-0 h-full md:h-auto w-[260px] md:w-auto transition-left duration-300`}
+			className='glass bg-white/6 backdrop-blur-lg border border-white/12 rounded-2xl p-5 md:block fixed md:static top-0 left-0 h-full md:h-auto w-[260px] md:w-auto transition-left duration-300'
+			style={{
+				left: isBurgerOpen ? '0' : '-300px',
+			}}
 		>
 			<div className='flex items-center gap-3 mb-6'>
 				<div className='w-12 h-12 rounded-lg bg-gradient-to-br from-purple-400 to-teal-400 flex items-center justify-center font-bold text-[#041118]'>

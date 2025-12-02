@@ -5,14 +5,22 @@ import './globals.css'
 const geistSans = Geist({
 	variable: '--font-geist-sans',
 	subsets: ['latin'],
+	weight: '400',
 })
 
 const geistMono = Geist_Mono({
 	variable: '--font-geist-mono',
 	subsets: ['latin'],
+	weight: '400',
 })
 
+export const viewport = {
+	width: 'device-width',
+	initialScale: 1,
+}
+
 export const metadata: Metadata = {
+	metadataBase: new URL('https://liquiddmind.vercel.app'),
 	title: {
 		default: 'LiquidMind — AI платформа',
 		template: '%s | LiquidMind',
@@ -49,12 +57,6 @@ export const metadata: Metadata = {
 				alt: 'LiquidMind AI',
 			},
 		],
-	},
-
-	viewport: {
-		width: 'device-width',
-		initialScale: 1,
-		maximumScale: 1,
 	},
 
 	robots: {

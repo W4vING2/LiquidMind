@@ -33,6 +33,7 @@
   /store - zustand хранилище
   /utils - ts функции
   /types - типы
+  /config - конфиг
 README.md - README
 .json/.mjs/.ts/.lock - вспомогательные/конфиг файлы
 .gitignore - gitignore
@@ -40,4 +41,4 @@ README.md - README
 
 ## Текущая версия
 
-v1.1
+v1.2
