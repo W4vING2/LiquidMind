@@ -7,7 +7,7 @@ export default function Logo({ primaryText, secondaryText }: LogoProps) {
 				{primaryText}
 			</div>
 			<div>
-				<div className='font-bold'>LiquidMind v1.4</div>
+				<div className='font-bold'>LiquidMind v1.5</div>
 				<div className='text-xs text-white/55'>{secondaryText}</div>
 			</div>
 		</>

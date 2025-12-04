@@ -2,28 +2,43 @@
 
 import { useMessageStore } from '@/src/store/messagesStore'
 import { Data } from '@/src/types/promptBar.types'
-import { fetchData } from '@/src/utils/fetchData'
+import { ChatMessage, fetchData } from '@/src/utils/fetchData'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 
 export default function PromptBar() {
 	const { register, handleSubmit, reset } = useForm<Data>()
-	const { addMessage, model, isLoading, setIsLoading } = useMessageStore()
+	const {
+		addMessage,
+		model,
+		isLoading,
+		setIsLoading,
+		historyOfDialog,
+		setHistoryOfDialog,
+	} = useMessageStore()
 
 	const onSubmit = async (data: Data) => {
+		if (!data.prompt) return
 		if (isLoading) return
+		const userPrompt: ChatMessage = { role: 'user', content: data.prompt }
+		const newArray = [...historyOfDialog, userPrompt]
+		setHistoryOfDialog(newArray)
 		setIsLoading(true)
 		reset()
+		addMessage({
+			text: data.prompt,
+			sender: 'user',
+		})
 		try {
-			const response = await fetchData(data.prompt, model)
+			const response = await fetchData(model, newArray)
+			setHistoryOfDialog(prev => [
+				...prev,
+				{ role: 'assistant', content: response },
+			])
 			if (response === undefined) return
 			addMessage({
-				text: data.prompt,
-				sender: 'user',
-			})
-			addMessage({
 				text: response,
-				sender: 'bot',
+				sender: 'assistant',
 			})
 		} finally {
 			setIsLoading(false)

@@ -1,5 +1,5 @@
 export interface MessageProps {
-	sender: 'user' | 'bot'
+	sender: 'user' | 'assistant'
 	text: string
 	index: number
 }

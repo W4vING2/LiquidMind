@@ -8,7 +8,7 @@ import Logo from './ui/Logo'
 export default function ChatArea() {
 	const { toggleBurger } = useMessageStore()
 	return (
-		<main className='glass bg-white/6 border border-white/12 rounded-xs md:rounded-2xl md:p-5 flex flex-col h-screen p-3 md:w-[75vw] w-screen md:m-auto'>
+		<main className='glass bg-white/6 border border-white/12 rounded-xs md:rounded-2xl md:p-5 flex flex-col h-dvh p-3 md:w-[75dvw] w-screen md:m-auto'>
 			<div className='flex items-center gap-3 mb-4'>
 				<Logo primaryText='AI' secondaryText='Чат' />
 				<button
