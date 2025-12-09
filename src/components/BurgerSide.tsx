@@ -12,7 +12,7 @@ function BurgerSide() {
 
 	return (
 		<aside
-			className='glass bg-white/6 backdrop-blur-lg border border-white/12 rounded-r-2xl rounded-l-none p-5 md:block fixed md:static top-0 left-0 h-full md:h-auto w-[260px] md:w-auto transition-left duration-300 z-5'
+			className='glass bg-white/6 backdrop-blur-lg border border-white/12 rounded-r-2xl rounded-l-none p-5 md:hidden fixed md:static top-0 left-0 h-full md:h-auto w-[260px] md:w-auto transition-left duration-300 z-5'
 			style={{
 				left: isBurgerOpen ? '0' : '-300px',
 			}}

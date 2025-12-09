@@ -14,7 +14,7 @@ function Logo({ text }: LogoProps) {
 				className='rounded-md'
 			/>
 			<div>
-				<div className='font-bold'>LiquidMind v1.7</div>
+				<div className='font-bold'>LiquidMind v2</div>
 				<div className='text-xs text-white/55'>{text}</div>
 			</div>
 		</>
